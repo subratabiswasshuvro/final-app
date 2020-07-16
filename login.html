@@ -1,0 +1,98 @@
+<<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>3rDiPWA login</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="./favicon.ico" />
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+        <!-- link rel manifest -->
+        <link rel="manifest" href="./manifest.json">
+        <!--iOS meta tags and icons -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="3rDiPWA">
+        <link rel=" apple-touch-icon " href=" ./icon-512x512.png ">
+        <!-- meta description here -->
+        <meta name=" description " content=" A sample 3rDi app ">
+        <!--meta theme-color -->
+        <meta name=" theme-color " content=" #2F3BA2 " />
+    </head>
+
+    <body>
+        <br /><br />
+        <div class=" container ">
+            <form>
+                <div class=" row ">
+                    <div class=" col ">
+                        <div>
+                            <h3 class=" open " style=" color: darkgray; font-size: large; "> <b>Login into 3rDi</b></h3>
+                            <h3 class=" open " style=" color: darkgray; font-size: large; "> <b>Your Potion To Create
+                                    Magic!</b></h3>
+                        </div>
+                        <div>
+                            <div>
+                                <a href=" https://www.facebook.com/ " class=" fb btn ">
+                                    <i class=" fab fa-facebook fa-fw "></i> Login with Facebook
+                                </a>
+                            </div>
+                            <div>
+                                <a href=" https://twitter.com/explore " class=" twitter btn ">
+                                    <i class=" fab fa-twitter fa-fw "></i> Login with Twitter
+                                </a>
+                            </div>
+                            <div>
+                                <a href=" https://accounts.google.com/ " class=" google btn " data-onsuccess=" onSignIn "><i class=" fab fa-google fa-fw " aria-hidden=true>
+                                    </i> Login with Google
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class=" input-group mb-2 ">
+                    <div class=" input-group-prepend ">
+                        <span class=" input-group-text ">
+                            <i class=" fas fa-envelope "></i>
+                        </span>
+                    </div>
+                    <input type=" email " class=" form-control " placeholder=" Email ">
+                </div>
+                <div class=" input-group mb-2 ">
+                    <div class=" input-group-prepend ">
+                        <span class=" input-group-text ">
+                            <i class=" fas fa-key "></i>
+                        </span>
+                    </div>
+                    <input type=" password " class=" form-control " placeholder=" Password ">
+                </div>
+                <div class=" text-center ">
+                    <br />
+                    <a href=" ./map.html ">Log in</a>
+                </div>
+                <div>
+                    <p id=" mem " class=" text-center ">Not Member yet ? <a id=" lin " class=" text-info " href=" registration.html ">Register</a></p>
+                </div>
+            </form>
+        </div>
+        <br />
+        <!-- adding service worker -->
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./service-worker.js')
+                        .then((reg) => {
+                            console.log('Service worker registered.', reg);
+                        });
+                });
+            }
+        </script>
+    </body>
+
+    </html>

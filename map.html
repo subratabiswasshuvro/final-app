@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> 3rDi Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <style>
+        #map {
+            height: 95%;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+    <!-- link rel manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <!--iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="3rDiPWA">
+    <link rel="apple-touch-icon" href="./icon-512x512.png">
+    <!-- meta description -->
+    <meta name="description" content="A sample 3rDi app">
+    <!--meta theme-color -->
+    <meta name="theme-color" content="#2F3BA2" />
+</head>
+
+<!-- <link rel="stylesheet" href="..//styles/style.css"> -->
+<script src="./other.js"></script>
+<script src="./map.js"></script>
+
+
+<!-- Google API call -->
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfJFUuHERwhT9kIbDoM5m4h_drgn2CTpM&callback=initMap"> -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?v=quarterly&key=AIzaSyCfJFUuHERwhT9kIbDoM5m4h_drgn2CTpM&callback=initMap">
+</script>
+
+<body>
+    <div class="fullscreen">
+        <div class="topnav">
+            <a href="./index.html" class="active">Home</a>
+            <div id="myLinks">
+                <a href="./cam.html">Camera</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <div id="mnav1"></div>
+                <div id="mnav2"></div>
+                <div id="mnav3"></div>
+            </a>
+        </div>
+        <!--  place map window-->
+        <div id="map"></div>
+    </div>
+
+    <!-- service worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then((reg) => {
+                        console.log('Service worker registered.', reg);
+                    });
+            });
+        }
+    </script>
+    <link rel="stylesheet" href="./style.css">
+</body>
+
+</html>

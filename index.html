@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>3rDiPWA</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <!-- Link to your main style sheet-->
+    <link rel="stylesheet" href="./style.css">
+    <!-- link rel manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <!--iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="3rDiPWA">
+    <link rel="apple-touch-icon" href="./icon-512x512.png">
+    <!-- meta description here -->
+    <meta name="description" content="A sample 3rDi app">
+    <!--meta theme-color -->
+    <meta name="theme-color" content="#2F3BA2" />
+    <!-- <link rel="icon" type="image/png" sizes="144x144" href="/public/images/icons/icon-144x144.png"> -->
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+
+                <div class="form" id="test" style="left:50%;top: 25%;transform: translate(-50%,-50%);position: absolute;">
+                    <!-- <h3 style="text-align: center;">Login</h3> -->
+                    <p1 style="font-size: xx-large; color:lightseagreen ;text-align: center; font-weight: 600;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                        <h3>
+
+                            </br>
+                            </br>
+                            </br>Welcome ! </br>to the Magical World of</br>Augmented Reality
+                    </p1><br>
+                    <a class="btn btn-secondary" href="./login.html" id="btn1" style="font-size:large;text-decoration: none;border: solid;border-radius: 10px;height:20px;background-color: darkslateblue;color:lavenderblush;text-align: center; font-size: 15px;">
+                        Enjoy 3rDi Experience</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PWA install button -->
+    <button id="install_button" hidden>Install</button>
+
+    <!-- Service worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then((reg) => {
+                        console.log('Service worker registered.', reg);
+                    });
+            });
+        }
+    </script>
+
+    <!-- PWA the install script -->
+    <script src="./install.js"></script>
+
+</body>
+
+</html>
+
+<!-- https://github.com/subratabiswasshuvro/final-app -->

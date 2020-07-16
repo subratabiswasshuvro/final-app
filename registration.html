@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>3rDi Registration</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <!-- Link to your main style sheet-->
+    <link rel="stylesheet" href="./style.css">
+    <!-- link rel manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <!--iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Weather PWA">
+    <link rel="apple-touch-icon" href="./icon-512x512.png">
+    <!-- meta description here -->
+    <meta name="description" content="3rDiPWA>
+    <!--meta theme-color -->
+    <meta name=" theme-color " content=" #2F3BA2 " />
+</head>
+
+<body>
+    <br /><br />
+    <div class=" container " id=" main ">
+        <form action=" http://localhost:3002/student " method=" POST ">
+            <div class=" row ">
+                <div class=" col ">
+                    <!-- <img src=" ./images/logo.png "> -->
+                    <div>
+                        <h3 class=" open " style=" color: darkgray; font-size: large; "> Getting Started With 3rDi</h3>
+                        <h3 class=" open " style=" color: darkgray; font-size: large; "> Your Potion To Create Magic!
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class=" input-group mb-2 ">
+                <input type=" text " class=" form-control " placeholder=" First Name ">
+            </div>
+            <div class=" input-group mb-2 ">
+                <input type=" text " class=" form-control " placeholder=" Last Name ">
+            </div>
+            <div class=" input-group mb-2 ">
+                <div class=" input-group-prepend ">
+                    <span class=" input-group-text ">
+                        <i class=" fas fa-user "></i>
+                    </span>
+                </div>
+                <input type=" text " class=" form-control " placeholder=" User Name ">
+            </div>
+            <div class=" input-group mb-2 ">
+                <div class=" input-group-prepend ">
+                    <span class=" input-group-text ">
+                        <i class=" fas fa-envelope "></i>
+                    </span>
+                </div>
+                <input type=" email " class=" form-control " placeholder=" Email ">
+            </div>
+            <div class=" input-group mb-2 ">
+                <div class=" input-group-prepend ">
+                    <span class=" input-group-text ">
+                        <i class=" fas fa-key "></i>
+                    </span>
+                </div>
+                <input type=" password " class=" form-control " placeholder=" Password ">
+            </div>
+            <div class=" input-group mb-2 ">
+                <div class=" input-group-prepend ">
+                    <span class=" input-group-text ">
+                        <i class=" fas fa-check "></i>
+                    </span>
+                </div>
+                <input type=" password " class=" form-control " placeholder=" Confirm Password ">
+            </div>
+            <br/>
+            <div class=" text-center ">
+                <a href=" ./map.html " id=" btn1 ">Register</a>
+            </div>
+            <div>
+                <p id=" mem " class=" text-center ">Already Member ?<a a id=" lin " class=" text-info "
+                        href=" login.html ">Login</a>
+                </p>
+            </div>
+        </form>
+
+</body>
+<!-- service worker -->
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then((reg) => {
+                    console.log('Service worker registered.', reg);
+                });
+        });
+    }
+</script>
+
+</html>

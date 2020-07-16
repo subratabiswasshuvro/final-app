@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>3rDi Camera</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <!-- Link to the main style sheet-->
+    <link rel="stylesheet" href="./style.css">
+    <!-- link rel manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <!--iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="3rDiPWA">
+    <link rel="apple-touch-icon" href="./icon-512x512.png">
+    <!-- meta description here -->
+    <meta name="description" content="A sample 3rDi app">
+    <!--meta theme-color -->
+    <meta name="theme-color" content="#2F3BA2" />
+</head>
+
+
+<body>
+    <div class="topnav">
+        <a href="./index.html" class="active">Home</a>
+        <div id="myLinks">
+            <a href="./map.html ">Map</a>
+
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <div id="mnav1"></div>
+            <div id="mnav2"></div>
+            <div id="mnav3"></div>
+        </a>
+    </div>
+
+    <p>Wait for the model to load before clicking the button to enable the scan.</p>
+
+    <section id="demos" class="invisible">
+
+        <div id="liveView" class="camView">
+            <button id="webcamButton">Scan</button>
+            <!-- <video id="webcam" autoplay width="640" height="480"></video> -->
+            <video id="webcam" autoplay></video>
+        </div>
+    </section>
+
+    <!-- Import TensorFlow.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+    <!-- script for service worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then((reg) => {
+                        console.log('Service worker registered.', reg);
+                    });
+            });
+        }
+    </script>
+    <!-- Reference to  JavaScript file -->
+    <script src="./camera.js"></script>
+    <script src="./other.js"></script>
+
+
+</body>
+
+</html>
