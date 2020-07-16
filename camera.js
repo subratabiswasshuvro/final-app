@@ -1,4 +1,8 @@
-// var constraints = { video: { facingMode: "environment" }, audio: false }; // use this if camera is facing back and audio active
+    // getUsermedia parameters to force video but not audio.
+    const constraints = {
+        video: { facingMode: "environment" },
+        audio: false
+    };
 // variable declaration
 
 const video = document.getElementById('webcam');
@@ -30,11 +34,7 @@ function enableCam(event) {
     // This will hide the button once clicked.
     event.target.classList.add('removed');
 
-    // getUsermedia parameters to force video but not audio.
-    const constraints = {
-        video: { facingMode: "environment" },
-        audio: false
-    };
+
 
     // Activate the camera stream.
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
