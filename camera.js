@@ -1,3 +1,4 @@
+var constraints = { video: { facingMode: "environment" }, audio: false }; // use this if camera is facing back and audio active
 // variable declaration
 
 const video = document.getElementById('webcam');
